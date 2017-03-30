@@ -103,8 +103,7 @@ def create_user(user, admin_pass):
 
 
 
-##################################   Main   ###################################
-
+#main
 admin_pass = input_ldap_pass()
 try_ldap_bind(admin_pass)
 
