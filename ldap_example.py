@@ -75,7 +75,7 @@ def create_user(user, admin_pass):
         ('givenname', user['firstname']),
         ('sn', user['lastname']),
         ('uid', str(user['uid'])),
-        ('loginShell', user['shell']),
+        ('loginShell', user['shell'])
        
     ])
 
