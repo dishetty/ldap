@@ -39,6 +39,8 @@ def input_data():
         user['shell'] = DEFAULT_SHELL
     else:
         user['shell'] = shell
+    #password      
+    user['password'] = raw_input("Password: ")
 
     return user
 
@@ -76,7 +78,8 @@ def create_user(user, admin_pass):
         ('sn', user['lastname']),
         ('uid', str(user['uid'])),
         ('loginShell', user['shell'])
-       
+        ('userPassword', user['password'])
+
     ])
 
     ldap_conn = ldap.initialize(ldap_ad)
@@ -98,4 +101,4 @@ create_user(user,admin_pass)
        
 
 print("")
-print(" user " + user['username'] + " (" + str(user['uid']) + ") successfuly created")
+print(" user " + user['username'] + " (" + str(user['uid']) + ") successfully created")
